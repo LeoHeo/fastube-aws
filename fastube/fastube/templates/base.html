@@ -1,11 +1,9 @@
-{% load staticfiles %}<!DOCTYPE html>
+{% load pipeline %}<!DOCTYPE html>
 <html lang="ko-KR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static "css/application.css" %}">
-    <link rel="stylesheet" href="{% static "css/partials/header.css" %}">
-    <link rel="stylesheet" href="{% static "css/partials/footer.css" %}">
+    {% stylesheet "fastube" %}
     <title>{% block title%}{% endblock %}</title>
 </head>
 <body>
