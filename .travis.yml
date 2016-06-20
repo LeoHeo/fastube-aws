@@ -1,0 +1,11 @@
+language: python
+python:
+    - "3.4"
+    - "3.5"
+install: 
+    - pip install -r requirements/development.txt
+script: 
+    - pep8 .
+    - python fastube/manage.py test fastube -v2
+notifications:
+  slack: notificationslack-hjh:vkamkT4yaFFJ198M04yJeYHr
