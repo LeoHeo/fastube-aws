@@ -1,6 +1,6 @@
 from django.views.generic.base import TemplateView
+from django.contrib.auth import get_user_model
 from django.shortcuts import redirect
-from users.models import User
 
 
 class SignupView(TemplateView):
@@ -12,7 +12,7 @@ class SignupView(TemplateView):
         email = request.POST.get("email")
         phonenumber = request.POST.get("phonenumber")
 
-        user = User.objects.create_user(
+        user = get_user_model().objects.create_user(
             username=username,
             password=password,
             email=email,
