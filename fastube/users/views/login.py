@@ -27,4 +27,4 @@ class LoginView(TemplateView):
             )
             return redirect(next_url)
 
-        return redirect("auth:login")
+        return redirect("users:login")

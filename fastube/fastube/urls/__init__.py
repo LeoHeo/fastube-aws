@@ -5,6 +5,9 @@ from fastube.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+
+    url('', include('social.apps.django_app.urls', namespace='social')),
+
+    url(r'^', include('users.urls.auth', namespace="users")),
     url(r'^$', HomeView.as_view(), name="home"),
-    url(r'^', include('users.urls.auth', namespace="auth")),
 ]
