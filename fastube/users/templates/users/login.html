@@ -10,4 +10,8 @@
     <input type="hidden" name="next" value="{{ request.GET.next }}">
     <input type="submit" value="Login">
 </form>
+<ul>
+    <li><a href="{% url "social:begin" backend="facebook" %}">Facebook Login</a></li>
+    <li><a href="{% url "social:begin" backend="kakao" %}">KaKao Login</a></li>
+</ul>
 {% endblock %}

@@ -12,4 +12,8 @@
     <input type="text" name="phonenumber" placeholder="010-9979-5385" required>
     <input type="submit" value-"Signup">
 </form>
+<ul>
+    <li><a href="{% url "social:begin" backend="facebook" %}">Facebook Signup</a></li>
+    <li><a href="{% url "social:begin" backend="kakao" %}">KaKao Signup</a></li>
+</ul>
 {% endblock %}
