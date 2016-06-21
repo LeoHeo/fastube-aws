@@ -9,6 +9,7 @@ class LoginView(TemplateView):
     def post(self, request, *args, **kwargs):
         username = request.POST.get("username")
         password = request.POST.get("password")
+        next_url = request.POST.get("next") or "home"
 
         user = authenticate(
             username=username,
@@ -17,6 +18,6 @@ class LoginView(TemplateView):
 
         if user:
             login(request, user)
-            return redirect("home")
+            return redirect(next_url)
 
         return redirct("auth:login")

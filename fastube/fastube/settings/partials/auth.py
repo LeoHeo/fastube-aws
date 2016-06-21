@@ -16,4 +16,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Auth Model
 AUTH_USER_MODEL = "users.User"
+
+# Login
+LOGIN_URL = "/login/"
