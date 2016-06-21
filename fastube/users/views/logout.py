@@ -1,7 +1,8 @@
-from django.contrib import messages
 from django.views.generic.base import RedirectView
 from django.core.urlresolvers import reverse
 from django.contrib.auth import logout
+from django.contrib import messages
+from django.conf import settings
 
 
 class LogoutView(RedirectView):
@@ -11,6 +12,6 @@ class LogoutView(RedirectView):
         messages.add_message(
             self.request,
             messages.SUCCESS,
-            "성공적으로 로그아웃 되었습니다.",
+            settings.LOGOUT_SUCCESS_MESSAGE,
         )
         return reverse("home")

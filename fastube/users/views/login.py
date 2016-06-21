@@ -1,6 +1,8 @@
 from django.views.generic.base import TemplateView
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect
+from django.contrib import messages
+from django.conf import settings
 
 
 class LoginView(TemplateView):
@@ -18,6 +20,11 @@ class LoginView(TemplateView):
 
         if user:
             login(request, user)
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                settings.LOGIN_SUCCESS_MESSAGE,
+            )
             return redirect(next_url)
 
         return redirct("auth:login")
