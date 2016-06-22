@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'social.apps.django_app.default',
 
     'users',
+    'posts',
 ]
 
 MIDDLEWARE_CLASSES = [
