@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<form action="{% url "users:login" %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="name" required>
+    <input type="password" name="password" placeholder="password" required>
+    <input type="hidden" name="next" value="{{ request.GET.next }}">
+    <input type="submit" value="Login">
+</form>
+<ul>
+    <li><a href="{% url "social:begin" backend="facebook" %}">Facebook Login</a></li>
+    <li><a href="{% url "social:begin" backend="kakao" %}">KaKao Login</a></li>
+</ul>
+{% endblock %}
