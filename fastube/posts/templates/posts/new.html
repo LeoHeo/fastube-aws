@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ header|default:"NewPost" }}{% endblock %}
+
+{% block content %}
+<h2>{{ header|default:"NewPost" }}</h2>
+{% if video_id %}
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ video_id }}" frameborder="0" allowfullscreen></iframe> 
+{% endif %}
+<form action="{{ action }}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="video_id" value="{{ video_id }}" required>
+    <input type="text" name="title" value="{{ title }}" required>
+    <textarea name="content" >{{ content }}</textarea>
+    <input type="submit">
+</form>
+{% endblock %}

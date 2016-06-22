@@ -10,4 +10,5 @@ urlpatterns = [
 
     url(r'^', include('users.urls.auth', namespace="users")),
     url(r'^$', HomeView.as_view(), name="home"),
+    url(r'^posts/', include('posts.urls.posts', namespace="posts")),
 ]
