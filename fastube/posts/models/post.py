@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 
 from users.models import User
 
@@ -29,6 +30,14 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse(
+            "posts:detail",
+            kwargs={
+                "post_id": self.id,
+            },
+        )
 
     def get_youtube_original_url(self):
         return "https://www.youtube.com/watch?v={video_id}".format(
