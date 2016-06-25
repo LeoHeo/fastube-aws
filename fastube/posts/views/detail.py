@@ -5,4 +5,4 @@ from .base import PostBaseView
 
 class PostDetailView(PostBaseView, DetailView):
     template_name = "posts/detail.html"
-    pk_url_kwarg = "post_id"
+    slug_field = "hash_id"
