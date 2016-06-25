@@ -19,7 +19,7 @@ class TestPost(TestCase):
         )
 
         # Create Post
-        self.post_video_id = "lcmAdIdSA5k"
+        self.post_video_id = "M9FpdKZpwhQ"
 
         self.post = self.user.post_set.create(
             video_id=self.post_video_id,
