@@ -29,7 +29,7 @@ class PostCreateView(View):
             content=content,
         )
 
-        return redirect("posts:create")
+        return redirect("posts:list")
 
 
 class PostCreateConfirmView(View):
