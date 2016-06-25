@@ -5,7 +5,10 @@
 {% block content %}
 <ul>
     {% for post in post_list %}
-    <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+    <li>
+        <img src="{{ post.thumbnail_image_url }}"><br>
+        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+    </li>
     {% endfor %}
 </ul>
 {% endblock %}
