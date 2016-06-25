@@ -19,7 +19,7 @@ class TestPost(TestCase):
         )
 
         # Create Post
-        self.post_video_id = "lcmAdIdSA5k"
+        self.post_video_id = "M9FpdKZpwhQ"
 
         self.post = self.user.post_set.create(
             video_id=self.post_video_id,
@@ -32,7 +32,7 @@ class TestPost(TestCase):
         youtube 원본영상의 링크를 생성할 수 있어야 한다.
         """
         self.assertEqual(
-            self.post.get_youtube_original_url(),
+            self.post.youtube_original_url,
             "https://www.youtube.com/watch?v={post_video_id}".format(
                 post_video_id=self.post_video_id,
             )
