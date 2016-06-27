@@ -13,4 +13,5 @@ urlpatterns = [
     url(r'^', include('users.urls.auth', namespace="users")),
     url(r'^$', HomeView.as_view(), name="home"),
     url(r'^posts/', include('posts.urls.posts', namespace="posts")),
+    url(r'^api/', include('posts.urls.list', namespace="api")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
