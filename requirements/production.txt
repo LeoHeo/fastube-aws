@@ -3,5 +3,5 @@ django-pipeline
 python-social-auth
 hashids
 Pillow
-requests
+requests==2.9.1
 beautifulsoup4
