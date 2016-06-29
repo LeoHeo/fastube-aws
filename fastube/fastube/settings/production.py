@@ -1,9 +1,11 @@
+import os
+
 from .partials import *
 
 DEBUG = False
 ALLOWED_HOSTS = ["*", ]
 
-LOG = path.join(LOG_DIR, 'django_app.log')
+LOG = os.path.join(LOG_DIR, 'django_app.log')
 
 LOGGING = {
     'version': 1,
