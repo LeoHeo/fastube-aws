@@ -3,12 +3,11 @@
 
 chown ec2-user:ec2-user /home/ec2-user/www
 
-mkdir -p /home/ec2-user/www/fastube-venv/
-pyenv deactivate
-pyenv uninstall -f fastube
-pyenv virtualenv 3.5.1 fastube
+virtualenv --python=python3.4 /home/ec2-user/www/fastube-venv
 
 chown ec2-user:ec2-user /home/ec2-user/www/fastube-venv
 pyenv activate fastube
 
-pip3 install -r /home/ec2-user/www/fastube/requirements.txt
+source /home/ec2-user/www/fastube-venv/bin/activate
+
+pip install -r /home/ec2-user/www/fastube/requirements.txt
