@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 cd /home/ec2-user/www/fastube/
 
 export DJANGO_SETTINGS_MODULE="fastube.settings.production"
