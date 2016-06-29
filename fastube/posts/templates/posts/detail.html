@@ -3,7 +3,27 @@
 {% block title %}{{ post.title }} Detail{% endblock %}
 
 {% block content %}
-<h2>{{ post.title }}</h2>
-<h4>{{ post.video_original_title }}</h4>
-<p>{{ post.content }}</p>
+<section>
+    <h2>{{ post.title }}</h2>
+    <h4>{{ post.video_original_title }}</h4>
+    <p>{{ post.content }}</p>
+</section>
+
+<section>
+    <h3>Comment (<span>{{ post.comment_set.count }}</span>)</h3>
+
+    <ul>
+        {% for comment in post.comment_set.all %}
+        <li>
+            {{ comment.user.username }}: {{ comment.content }}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <form>
+        <input type="text" name="content" placeholder="댓글" required>
+        <input type="submit" value="댓글 달기">
+    </form>
+</section>
+
 {% endblock %}
