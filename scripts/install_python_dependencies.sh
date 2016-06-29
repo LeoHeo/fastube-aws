@@ -1,12 +1,14 @@
 #!/bin/bash
-#/etc/init.d/nginx stop
+/etc/init.d/nginx stop
 
 chown ec2-user:ec2-user /home/ec2-user/www
 
-virtualenv --python=python3.4 /home/ec2-user/www/fastube-venv
+mkdir -p /home/ec2-user/www/fastube-venv/
+pyenv deactivate
+pyenv uninstall -f fastube
+pyenv virtualenv 3.5.1 fastube
 
 chown ec2-user:ec2-user /home/ec2-user/www/fastube-venv
+pyenv activate fastube
 
-source /home/ec2-user/www/fastube-venv/bin/activate
-
-pip install -r /home/ec2-user/www/fastube/requirements.txt
+pip3 install -r /home/ec2-user/www/fastube/requirements.txt
