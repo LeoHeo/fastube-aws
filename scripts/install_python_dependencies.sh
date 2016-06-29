@@ -1,9 +1,9 @@
 #!/bin/bash
-/etc/init.d/nginx stop
+#/etc/init.d/nginx stop
 
 chown ec2-user:ec2-user /home/ec2-user/www
 
-virtualenv --python=3.4 /home/ec2-user/www/fastube-venv
+virtualenv --python=python3.4 /home/ec2-user/www/fastube-venv
 
 chown ec2-user:ec2-user /home/ec2-user/www/fastube-venv
 
