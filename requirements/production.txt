@@ -2,7 +2,7 @@ Django
 django-pipeline
 python-social-auth
 hashids
-Pillow
+Pillow==3.0.0
 requests==2.9.1
 beautifulsoup4
 djangorestframework
